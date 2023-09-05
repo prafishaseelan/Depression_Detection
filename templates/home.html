@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Finder</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body{
+            /* background-image: url("back.jpg"); */
+            background-image: url("{{ url_for('static', filename='back.jpg') }}")
+            /* background: url("back.jpg") */
+            background-size: cover;
+        }
+        button{
+            padding: 20px 30px;
+            border: none;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            margin: 20px; 
+            background-color: rgb(142, 68, 173);
+            color: aliceblue;       
+            font-size: larger;
+            transition: 0.5s ease-in-out;
+            cursor: pointer;
+        }
+        .btn{
+            position: absolute;
+            left: 65%;
+            top: 30%;
+        }
+        .btn1{
+            margin-left:24px;
+            padding: 20px 47px;
+        }
+
+        .head{
+            position: absolute;
+            left: 60%;
+            top: 10%;
+            font-size: larger;
+            font-style: oblique;
+        
+        }
+
+        button:hover{
+            background-color: brown;
+            color: rgb(241, 196, 15);
+        }
+    </style>
+</head>
+<body style="background-image: url({{ url_for('static', filename='back.jpg') }}); background-size: cover; ">
+    <div class="head">
+        <h1>Mental Health Identification</h1>
+    </div>
+    <div class="btn">
+    <form action="video">
+     <button type="submit" class="btn1" ><b>Video</b>
+     </button>
+    </form>
+    <form action="Start_detection">
+     <button type="submit"><b>Live Cam!</b></button>
+    </form>
+    </div>
+</body>
+</html>

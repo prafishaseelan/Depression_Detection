@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Detection</title>
+    <style>
+        body{
+            /* background-image: url("cam.jpg"); */
+            background-image: url({{ url_for('static', filename='cam.jpg') }})
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .contain{
+            background: rgb(255, 255, 255);
+            width: 700px;
+            height: 480px;
+            position: relative;
+            margin-left: 45%;
+            margin-top: 3%;
+            /* padding: 10px; */
+            border: 20px;
+            border-color: beige;
+        }
+
+        .contain img{
+            position: absolute;
+            margin: 1.5% 0% 0% 2.5%;
+            width: 95%;
+            height: 95%;                    
+        }
+
+
+        input[type="file"] {
+    display: none;
+}
+
+.upload {
+    /* display: inline-block; */
+    padding: 6px 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    padding: 20px 30px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);       
+    font-size: larger;
+    margin-left: 10%;
+    margin-top: -5%;
+    transition: 0.5s ease-in-out;
+}
+
+.upload:hover{
+            background-color: aqua;
+            color: white;
+        }
+
+        button{
+            padding: 20px 30px;
+            border: none;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            margin-left: 160px;
+            margin-top: 2%; 
+            background-color: rgb(142, 68, 173);
+            color: aliceblue;       
+            font-size: larger;
+            transition: 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        button:hover{
+            color: black;
+            background-color: aqua;       
+        }
+
+        .close{
+            position: absolute;
+            margin-left: 65% ;
+            margin-top: -4%;
+        }
+
+    </style>
+</head>
+<body style="background-image: url({{ url_for('static', filename='cam.jpg') }}); background-size: cover;background-repeat: no-repeat; ">
+   
+    <div class="contain">
+       
+             <img src="{{ url_for('upload_feed') }}" alt="">
+        
+     </div>
+<form action="upload" method="POST"  enctype="multipart/form-data">
+    <label class="upload">
+        <input type="file"/>
+        <b>Upload Video</b>    </label>
+        <button><b>Submit!</button></b></button>
+        </form>
+
+        <form action="video">
+            <button class="close"><b>Close</b></button>
+        </form>
+</body>
+</html>
